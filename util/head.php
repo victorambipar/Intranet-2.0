@@ -8,7 +8,7 @@
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
         <meta name=\"description\" content=\"\">
         <meta name=\"author\" content=\"\">
-        <title>SB Admin - Start Bootstrap Template</title>
+        <title>Grupo Ambipar - Intranet</title>
         <!-- Bootstrap core CSS-->
         <link href=\"".$caminho."vendor/bootstrap/css/bootstrap2.min.css\" rel=\"stylesheet\">
         <!-- Custom fonts for this template-->

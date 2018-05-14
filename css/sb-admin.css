@@ -252,7 +252,7 @@ body.sidenav-toggled #mainNav.fixed-top .sidenav-toggler .nav-link {
 }
 
 body.sidenav-toggled #mainNav.fixed-top #sidenavToggler i {
-  -webkit-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1z);
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   transform: scaleX(-1);

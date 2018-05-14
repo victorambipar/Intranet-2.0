@@ -11,7 +11,7 @@
         <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">
           <ul class=\"navbar-nav navbar-sidenav\" id=\"exampleAccordion\">
   
-            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Painel\">
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Dashboard\">
               <a class=\"nav-link\" href=\"".$caminho."index.html\">
               
                 <i class=\"fa fa-fw fa-dashboard\"></i>
@@ -19,31 +19,42 @@
                 <span class=\"nav-link-text\"></span>
               </a>
             </li>
-            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Usuários\">
-              <a class=\"nav-link\" href=\"".$caminho."pages/users.php\">
-                <i class=\"fa fa-fw fa-users\"></i>
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Charts\">
+              <a class=\"nav-link\" href=\"".$caminho."charts.html\">
+                <i class=\"fa fa-fw fa-area-chart\"></i>
                 <span class=\"nav-link-text\"></span>
               </a>
             </li>
-            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Eventos\">
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Tables\">
               <a class=\"nav-link\" href=\"".$caminho."tables.html\">
-                <i class=\"fa fa-fw fa-calendar\"></i>
+                <i class=\"fa fa-fw fa-table\"></i>
                 <span class=\"nav-link-text\"></span>
               </a>
             </li>
-            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Mural de recados\">
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Components\">
               <a class=\"nav-link\" data-toggle=\"collapse\" href=\"".$caminho."#collapseComponents\" data-parent=\"#exampleAccordion\">
-                <i class=\"fa fa-fw fa-comments\"></i>
+                <i class=\"fa fa-fw fa-wrench\"></i>
                 <span class=\"nav-link-text\"></span>
               </a>
             </li>
-            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Ramais\">
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Example Pages\">
               <a class=\"nav-link\" data-toggle=\"collapse\" href=\"".$caminho."#collapseExamplePages\" data-parent=\"#exampleAccordion\">
-                <i class=\"fa fa-fw fa-phone\"></i>
+                <i class=\"fa fa-fw fa-file\"></i>
                 <span class=\"nav-link-text\"></span>
               </a>
             </li>
-            
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Menu Levels\">
+              <a class=\"nav-link\" data-toggle=\"collapse\" href=\"".$caminho."#collapseMulti\" data-parent=\"#exampleAccordion\">
+                <i class=\"fa fa-fw fa-sitemap\"></i>
+                <span class=\"nav-link-text\"></span>
+              </a>
+            </li>
+            <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Link\">
+              <a class=\"nav-link\" href=\"".$caminho."#\">
+                <i class=\"fa fa-fw fa-link\"></i>
+                <span class=\"nav-link-text\"></span>
+              </a>
+            </li>
           </ul>
           
          <ul class=\"navbar-nav sidenav-toggler\">
