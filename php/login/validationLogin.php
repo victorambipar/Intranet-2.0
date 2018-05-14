@@ -18,7 +18,7 @@
         if(mysqli_fetch_assoc($query) == null)
         {
 
-            echo "<body onLoad=\"alert('Usuário não cadastrado!');window.location='../../menu.php'\">";
+            echo "<body onLoad=\"alert('Usuário não cadastrado!');window.location='../../index.php'\">";
             
 
         }
@@ -38,8 +38,10 @@
             }
             session_start();
             $_SESSION["id"] = $id_user;
-            $_SESSION["name"] = $id['name_user']." ".$id['second_name_user']; 
+            $_SESSION["name"] = $id['name_user']." ".$id['second_name_user'];
+            $_SESSION["email"] =  $id['email_user'];
             $_SESSION["permission"] = $id['permission_user'];
+            $_SESSION["img"] = $id['url_img'];
             mysqli_query($database,"INSERT INTO logs_users VALUES(null,$id_user,'$hour','$date');");
         }
         

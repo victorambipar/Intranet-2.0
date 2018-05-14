@@ -17,6 +17,7 @@
         <link href=\"".$caminho."vendor/datatables/dataTables.bootstrap4.css\" rel=\"stylesheet\">
         <!-- Custom styles for this template-->
         <link href=\"".$caminho."css/sb-admin.css\" rel=\"stylesheet\">
+        <link href=\"".$caminho."css/style_search.css\" rel=\"stylesheet\">
       </head>";
     }
 

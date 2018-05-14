@@ -12,7 +12,7 @@
           <ul class=\"navbar-nav navbar-sidenav\" id=\"exampleAccordion\">
   
             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Painel\">
-              <a class=\"nav-link\" href=\"".$caminho."index.html\">
+              <a class=\"nav-link\" href=\"".$caminho."menu.php\">
               
                 <i class=\"fa fa-fw fa-dashboard\"></i>
                 
@@ -53,8 +53,9 @@
               </a>
             </li>
           </ul>
-          <ul class=\"navbar-nav ml-auto\">
-            <li class=\"nav-item dropdown\">
+          <ul class=\"navbar-nav ml-auto\">";
+          if($_SESSION["permission"] == 2){
+            echo "<li class=\"nav-item dropdown\">
               <a class=\"nav-link dropdown-toggle mr-lg-2\" id=\"messagesDropdown\" href=\"".$caminho."#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                 <i class=\"fa fa-fw fa-gear\"></i>
               </a>
@@ -63,7 +64,7 @@
                 <i class=\"fa fa-fw fa-clock-o\"></i><strong> Atualizações</strong>
                 </a>
                 <div class=\"dropdown-divider\"></div>
-                <a class=\"dropdown-item\" href=\"".$caminho."#\">
+                <a class=\"dropdown-item\" href=\"".$caminho."pages/users_admin.php\">
                 <i class=\"fa fa-fw fa-users\"></i><strong> Usuários</strong>
                 </a>
                 <div class=\"dropdown-divider\"></div>
@@ -78,13 +79,14 @@
                 <a class=\"dropdown-item\" href=\"".$caminho."#\">
                 <i class=\"fa fa-fw fa-cutlery\"></i><strong> Cardápio</strong>
                 </a>
-            </li>
-            <li class=\"nav-item dropdown\">
+            </li>";
+          }else{}
+            echo "<!--<li class=\"nav-item dropdown\">
               <a class=\"nav-link dropdown-toggle mr-lg-2\" id=\"alertsDropdown\" href=\"".$caminho."#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                 <i class=\"fa fa-fw fa-user\"></i>
               </a>
               <div class=\"dropdown-menu\" aria-labelledby=\"alertsDropdown\">
-              <a class=\"dropdown-item\" href=\"".$caminho."#\">
+              <a class=\"dropdown-item\" href=\"".$caminho."pages/your_profile.php\">
               <i class=\"fa fa-fw fa-user\"></i><strong> Minha conta</strong>
               </a>
               <div class=\"dropdown-divider\"></div>
@@ -92,7 +94,7 @@
               <i class=\"fa fa-fw fa-sign-out\"></i><strong> Sair</strong>
               </a>
               </div>
-            </li>
+            </li>-->
             <!--Barra de pesquisar-->
             <!--<li class=\"nav-item\">
               <form class=\"form-inline my-2 my-lg-0 mr-lg-2\">
@@ -108,10 +110,14 @@
             </li>-->
             <!--Fim barra de pesquisar-->
             <!--Opção sair-->
-            <!--<li class=\"nav-item\">
-              <a class=\"nav-link\" data-toggle=\"modal\" data-target=\"#exampleModal\">
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"".$caminho."pages/your_profile.php\">
+                <i class=\"fa fa-fw fa-user\"></i>Minha conta</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"".$caminho."php/login/finalizeLogin.php\">
                 <i class=\"fa fa-fw fa-sign-out\"></i>Sair</a>
-            </li>-->
+            </li>
           </ul>
         </div>
       </nav>";
