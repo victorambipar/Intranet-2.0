@@ -2,6 +2,8 @@
 
   $id_user = $_GET['id_user'];
 
+  session_start();
+
   require_once("../util/head.php");
   require_once("../util/nav.php");
   require_once("../util/script.php");

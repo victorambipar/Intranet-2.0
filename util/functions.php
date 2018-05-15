@@ -290,4 +290,24 @@
         }
     }
 
+    function listSector($sql)
+    {
+    require_once("../connection/connection.php");
+    $database = connection_db();
+    $query2 = mysqli_query($database,$sql);
+    while($row = mysqli_fetch_assoc($query2))
+    {
+    $data = array('Select'=>$row);
+    $json = json_encode($data);
+    $obj = json_decode($json,true);
+    foreach($obj as $id2)
+    {
+    $sectors = $id2['name_sector'];
+    $id_sector= $id2['id_sector'];
+    }
+    echo "<option value=\"$id_sector\">$sectors</option>";
+    }
+    }
+
+
 ?>
