@@ -32,7 +32,7 @@
               </a>
             </li>
             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Mural de recados\">
-              <a class=\"nav-link\" data-toggle=\"collapse\" href=\"".$caminho."#collapseComponents\" data-parent=\"#exampleAccordion\">
+              <a class=\"nav-link\" href=\"".$caminho."pages/messages.php\">
                 <i class=\"fa fa-fw fa-comments\"></i>
                 <span class=\"nav-link-text\"></span>
               </a>
@@ -72,7 +72,7 @@
                 <i class=\"fa fa-fw fa-calendar\"></i><strong> Eventos</strong>
                 </a>
                 <div class=\"dropdown-divider\"></div>
-                <a class=\"dropdown-item\" href=\"".$caminho."#\">
+                <a class=\"dropdown-item\" href=\"".$caminho."pages/messages_admin.php\">
                 <i class=\"fa fa-fw fa-comments\"></i><strong> Recados</strong>
                 </a>
                 <div class=\"dropdown-divider\"></div>

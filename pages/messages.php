@@ -1,27 +1,33 @@
 <?php
   session_start();
+
   require_once("../util/head.php");
   require_once("../util/nav.php");
   require_once("../util/script.php");
   require_once("../util/footer.php");
   require_once("../util/functions.php");
   require_once("../util/functions_js.php");
-  require_once("../util/modal.php");
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <?php head("../"); ?>
-<link rel="stylesheet" href="../css/style_modal.css"> 
+
   <!-- Navigation-->
   <?php navigation("../");?>
   <?php functions()?>
   <div class="content-wrapper">
     <div class="container-fluid">
-      <p>
-      
-      <?php listProfile2("SELECT users.id_user,users.birthday_user,users.name_user,users.second_name_user,users.url_img,users.phone_user,users.function_user,users.ramal_user,users.email_user,sectors.name_sector FROM users INNER JOIN sectors ON users.sector_user_id = sectors.id_sector WHERE id_user =".$_SESSION['id'].";") ?>
-      <?php  get_img();?>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="mb-0 mt-4">
+            <i class="fa fa-comments"></i> Mural de recados</div>
+          <hr class="mt-2">
+          <?php listUsers2("SELECT users.id_user,messages.title_message,messages.text_message,messages.date_message,messages.time_message,sectors.name_sector,users.name_user,users.second_name_user,users.url_img FROM messages INNER JOIN users ON users.id_user = messages.id_user INNER JOIN sectors ON sectors.id_sector = messages.id_sector;","../")?>
+        
+    </div>
     <!-- /.container-fluid-->
     
     <?php footer("../")?>

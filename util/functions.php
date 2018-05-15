@@ -24,12 +24,55 @@
             <input type=\"hidden\" id=\"id_user_birthday".$id_user."\" value=\"$id_user\">
             <div class=\"media-body\">
             <div class=\"mb-0 mt-4\">
-            <h5  onClick=\"user2($id_user)\">$name</h5></div>
+            <div class=\"col-md-10\">
+            <p><h5  onClick=\"user2($id_user)\"> $name</h5></p></div>
+            </div>
             <hr class=\"mt-2\">
             </div>
             </div>";
         }
     }
+
+    function listUsers2($sql,$caminho)
+    {
+
+        require_once("../connection/connection.php");
+        $database = connection_db();
+        $query = mysqli_query($database,$sql);
+        while($row = mysqli_fetch_assoc($query))
+        {
+            $data = array('Select'=>$row);
+        
+        $json = json_encode($data);
+        $obj = json_decode($json,true);
+        foreach($obj as $id)
+        {
+        $id_user = $id['id_user'];
+        $name = $id['name_user']." ".$id['second_name_user'];
+        $img = $id['url_img'];
+        $title = $id['title_message'];
+        $text = $id['text_message'];
+        $date1 = $id['date_message'];
+        $time = $id['time_message'];
+        $sector = $id['name_sector'];
+        }
+        $date = preg_split('[-]', $date1);
+          echo "<div class=\"media\">
+          <img class=\"rounded-circle image-responsive\" width=\"45px\" height=\"45px\" src=\"".$caminho."".$img."\" alt=\"\">
+          <input type=\"hidden\" id=\"id_user_birthday".$id_user."\" value=\"$id_user\">
+          <div class=\"media-body\">
+          <div class=\"mb-0 mt-4\">
+          <div class=\"col-md-8\">
+          <p><h6 onClick=\"user2($id_user)\"> $name <div class=\"text-muted\">$date[2]/$date[1] $time </div></h6></p>
+          <p><h4 style=\"overflow-wrap:break-word;\">$title</h4></p>
+          <p><h6 style=\"overflow-wrap:break-word;\">$text</h6></p>
+          <hr class=\"mt-2\">
+          </div>
+          </div>
+          </div>
+          </div>";
+        }
+    } 
 
     function listBirthday($sql,$caminho)
     {
@@ -205,7 +248,7 @@
 
     function listProfile2($sql)
     {
-    
+        require_once("../util/modal.php");
         require_once("../connection/connection.php");
         $database = connection_db();
         $query = mysqli_query($database,$sql);
@@ -219,6 +262,8 @@
         { 
         $id_user = $id['id_user'];
         $name = $id['name_user']." ".$id['second_name_user'];
+        $name2 = $id['name_user'];
+        $second_name = $id['second_name_user'];
         $img = $id['url_img'];
         $date = $id['birthday_user'];
         $data_birth = preg_split("[-]",$date);
@@ -243,8 +288,10 @@
         </p>
         <div class=\"row\">
           <div class=\"col-lg-12\">
-          <div class=\"mb-0 mt-4\" href=\"\">
-              <h5><i class=\"fa fa-pencil\" href=\"\"></i> Editar<h5></div>
+          <div class=\"mb-0 mt-4\">
+              <p><h5 onClick=\"document.getElementById('id02').style.display='block'\"><i class=\"fa fa-camera\"></i> Trocar foto</h5></p>
+              <p><h5 onClick=\"document.getElementById('id03').style.display='block'\"><i class=\"fa fa-pencil\" href=\"\"></i> Editar</h5></p>
+              <p><h5 onClick=\"document.getElementById('id04').style.display='block'\"><i class=\"fa fa-lock\" href=\"\"></i> Trocar senha</h5></div></p>
             <hr class=\"mt-2\">
             <div class=\"mb-0 mt-4\">
               <i class=\"fa fa-user\"></i> Perfil</div>
@@ -287,6 +334,10 @@
             <hr class=\"mt-2\">
           </div>
         </div>";
+
+        myProfile($name2,$second_name,$date,$function,$sector,$email,$phone,$ramal);
+        resetPassword();
+
         }
     }
 
