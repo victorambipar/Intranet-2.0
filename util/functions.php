@@ -25,7 +25,7 @@
             <div class=\"media-body\">
             <div class=\"mb-0 mt-4\">
             <div class=\"col-md-10\">
-            <p><h5  onClick=\"user2($id_user)\"> $name</h5></p></div>
+            <p><h5  onClick=\"user2($id_user)\"><a href=\"#\"> $name</a></h5></p></div>
             </div>
             <hr class=\"mt-2\">
             </div>
@@ -63,7 +63,7 @@
           <div class=\"media-body\">
           <div class=\"mb-0 mt-4\">
           <div class=\"col-md-8\">
-          <p><h6 onClick=\"user2($id_user)\"> $name <div class=\"text-muted\">$date[2]/$date[1] $time </div></h6></p>
+          <p><h6 onClick=\"user2($id_user)\"><a href=\"#\"> $name </a><div class=\"text-muted\">$date[2]/$date[1] $time </div></h6></p>
           <p><h4 style=\"overflow-wrap:break-word;\">$title</h4></p>
           <p><h6 style=\"overflow-wrap:break-word;\">$text</h6></p>
           <hr class=\"mt-2\">
@@ -402,6 +402,45 @@
     $id_sector= $id2['id_sector'];
     }
     echo "<option value=\"$id_sector\">$sectors</option>";
+    }
+    }
+
+    function listNotices($sql)
+    {
+    require_once("connection/connection.php");
+    $database = connection_db();
+    $query2 = mysqli_query($database,$sql);
+    while($row = mysqli_fetch_assoc($query2))
+    {
+    $data = array('Select'=>$row);
+    $json = json_encode($data);
+    $obj = json_decode($json,true);
+    foreach($obj as $id)
+    {
+      $id_user = $id['id_user'];
+      $name = $id['name_user']." ".$id['second_name_user'];
+      $img = $id['url_img'];
+      $title = $id['title_notification'];
+      $text = $id['text_notification'];
+      $date1 = $id['date_notification'];
+      $time = $id['time_notification'];
+    }
+    echo "<div class=\"card mb-3\">
+              
+    <div class=\"card-body\">
+    <div class=\"media\">
+    <img class=\"d-flex mr-3 rounded-circle image-responsive\" width=\"45px\" height=\"45px\" src=\"$img\" alt=\"\">
+    <input type=\"hidden\" id=\"id_user_birthday".$id_user."\" value=\"$id_user\">
+    <div class=\"media-body\">
+    <h6  onClick=\"user($id_user)\" class=\"card-title mb-1\"><a href=\"#\">$name</a></h6>
+    </div>
+    </div>
+    <br>
+    <p class=\"card-text small\">$text
+    </p>
+    </div>
+    <div class=\"card-footer small text-muted\">Postado: $date1 $time</div>
+  </div>";
     }
     }
 

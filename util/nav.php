@@ -61,7 +61,7 @@
               </a>
               <div class=\"dropdown-menu\" aria-labelledby=\"messagesDropdown\">
                 <a class=\"dropdown-item\" href=\"".$caminho."#\">
-                <i class=\"fa fa-fw fa-clock-o\"></i><strong> Atualizações</strong>
+                <i class=\"fa fa-fw fa-newspaper-o\"></i><strong> Notícias</strong>
                 </a>
                 <div class=\"dropdown-divider\"></div>
                 <a class=\"dropdown-item\" href=\"".$caminho."pages/users_admin.php\">
