@@ -62,7 +62,7 @@
           <div class="card mb-3">
             <div class="card-header">
               <i class="fa fa-birthday-cake"></i> Aniversariantes do mês</div>
-            <?php $today = date('m'); listBirthday("SELECT * FROM users WHERE MONTH(birthday_user) = '$today' ORDER BY DAY(birthday_user) ASC;",""); ?>
+              <?php $today = date('m'); listBirthday("SELECT * FROM users WHERE MONTH(birthday_user) = '$today' ORDER BY DAY(birthday_user) ASC;",""); ?>
           </div>
           <div class="col-lg-12">
       <div class="mb-0 mt-4">
