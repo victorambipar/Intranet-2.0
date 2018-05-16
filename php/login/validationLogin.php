@@ -48,7 +48,7 @@
 
     }
     else{
-
+        echo "<body onLoad=\"alert('Email inválido!');window.location='../../index.php'\">";
     }
 
 ?>

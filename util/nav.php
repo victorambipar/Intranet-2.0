@@ -38,7 +38,7 @@
               </a>
             </li>
             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Ramais\">
-              <a class=\"nav-link\" data-toggle=\"collapse\" href=\"".$caminho."#collapseExamplePages\" data-parent=\"#exampleAccordion\">
+            <a class=\"nav-link\" href=\"".$caminho."pages/extensions.php\">
                 <i class=\"fa fa-fw fa-phone\"></i>
                 <span class=\"nav-link-text\"></span>
               </a>
@@ -60,7 +60,7 @@
                 <i class=\"fa fa-fw fa-gear\"></i>
               </a>
               <div class=\"dropdown-menu\" aria-labelledby=\"messagesDropdown\">
-                <a class=\"dropdown-item\" href=\"".$caminho."#\">
+                <a class=\"dropdown-item\" href=\"".$caminho."pages/your_notifications.php\">
                 <i class=\"fa fa-fw fa-newspaper-o\"></i><strong> Notícias</strong>
                 </a>
                 <div class=\"dropdown-divider\"></div>

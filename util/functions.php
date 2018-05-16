@@ -117,6 +117,48 @@
         }
     } 
 
+    function listMyNotifications($sql,$caminho)
+    {
+        require_once("../util/modal.php");
+        require_once("../connection/connection.php");
+        modal_addMessage();
+        $database = connection_db();
+        $query = mysqli_query($database,$sql);
+        while($row = mysqli_fetch_assoc($query))
+        {
+            $data = array('Select'=>$row);
+        
+        $json = json_encode($data);
+        $obj = json_decode($json,true);
+        foreach($obj as $id)
+        {
+          $id_user = $id['id_user'];
+          $name = $id['name_user']." ".$id['second_name_user'];
+          $img = $id['url_img'];
+          $title = $id['title_notification'];
+          $text = $id['text_notification'];
+          $date1 = $id['date_notification'];
+          $time = $id['time_notification'];
+        }
+        $date = preg_split('[-]', $date1);
+          echo "<div class=\"media\">
+          <img class=\"rounded-circle image-responsive\" width=\"45px\" height=\"45px\" src=\"".$caminho."".$img."\" alt=\"\">
+          <input type=\"hidden\" id=\"id_user_birthday".$id_user."\" value=\"$id_user\">
+          <div class=\"media-body\">
+          <div class=\"mb-0 mt-4\">
+          <div class=\"col-md-8\">
+          <p><h6 onClick=\"user2($id_user)\"> $name <div class=\"text-muted\">$date[2]/$date[1] $time </div></h6></p>
+          <p><h4 style=\"overflow-wrap:break-word;\">$title</h4></p>
+          <p><h6 style=\"overflow-wrap:break-word;\">$text</h6></p>
+          <p><button class=\"btn btn-success\">Editar</button> <button class=\"btn btn-danger\">Excluir</button></p>
+          <hr class=\"mt-2\">
+          </div>
+          </div>
+          </div>
+          </div>";
+        }
+    }
+
     function listBirthday($sql,$caminho)
     {
         
@@ -203,6 +245,31 @@
         </td>                
 
         
+        </tr>";
+        }
+    }
+
+    function listExtensions($sql)
+    {
+        require_once("../connection/connection.php");
+        $database = connection_db();
+        $query = mysqli_query($database,$sql);
+        while($row = mysqli_fetch_assoc($query))
+        {
+            $data = array('Select'=>$row);
+        
+        $json = json_encode($data);
+        $obj = json_decode($json,true);
+        foreach($obj as $id)
+        {
+            $name = $id['name_user']." ".$id['second_name_user'];;
+            $email = $id['email_user'];
+            $ramal = $id['ramal_user'];
+        }
+        echo "<tr>
+        <td>$name</td>
+        <td>$email</td>
+        <td>$ramal</td>
         </tr>";
         }
     }
@@ -425,6 +492,7 @@
       $date1 = $id['date_notification'];
       $time = $id['time_notification'];
     }
+    $date = preg_split('[-]', $date1);
     echo "<div class=\"card mb-3\">
               
     <div class=\"card-body\">
@@ -439,7 +507,7 @@
     <p class=\"card-text small\">$text
     </p>
     </div>
-    <div class=\"card-footer small text-muted\">Postado: $date1 $time</div>
+    <div class=\"card-footer small text-muted\">Postado: $date[2]/$date[1] $time</div>
   </div>";
     }
     }
