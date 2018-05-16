@@ -48,7 +48,7 @@
           <div class="card-columns">
             <!-- Example Social Card-->
             
-            <?php listNotices("	SELECT users.id_user,users.name_user,users.second_name_user,users.url_img,notifications.title_notification,notifications.text_notification,notifications.date_notification,notifications.time_notification FROM notifications INNER JOIN users ON notifications.id_user = users.id_user;");?>
+            <?php listNotices("	SELECT users.id_user,users.name_user,users.second_name_user,users.url_img,notifications.title_notification,notifications.text_notification,notifications.date_notification,notifications.time_notification FROM notifications INNER JOIN users ON notifications.id_user = users.id_user ORDER BY notifications.id_notification DESC LIMIT 14;");?>
             
             <!-- Example Social Card-->
             
