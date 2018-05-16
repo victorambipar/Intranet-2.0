@@ -74,6 +74,49 @@
         }
     } 
 
+    function listMyMessages($sql,$caminho)
+    {
+        require_once("../util/modal.php");
+        require_once("../connection/connection.php");
+        modal_addMessage();
+        $database = connection_db();
+        $query = mysqli_query($database,$sql);
+        while($row = mysqli_fetch_assoc($query))
+        {
+            $data = array('Select'=>$row);
+        
+        $json = json_encode($data);
+        $obj = json_decode($json,true);
+        foreach($obj as $id)
+        {
+        $id_user = $id['id_user'];
+        $name = $id['name_user']." ".$id['second_name_user'];
+        $img = $id['url_img'];
+        $title = $id['title_message'];
+        $text = $id['text_message'];
+        $date1 = $id['date_message'];
+        $time = $id['time_message'];
+        $sector = $id['name_sector'];
+        }
+        $date = preg_split('[-]', $date1);
+          echo "<div class=\"media\">
+          <img class=\"rounded-circle image-responsive\" width=\"45px\" height=\"45px\" src=\"".$caminho."".$img."\" alt=\"\">
+          <input type=\"hidden\" id=\"id_user_birthday".$id_user."\" value=\"$id_user\">
+          <div class=\"media-body\">
+          <div class=\"mb-0 mt-4\">
+          <div class=\"col-md-8\">
+          <p><h6 onClick=\"user2($id_user)\"> $name <div class=\"text-muted\">$date[2]/$date[1] $time </div></h6></p>
+          <p><h4 style=\"overflow-wrap:break-word;\">$title</h4></p>
+          <p><h6 style=\"overflow-wrap:break-word;\">$text</h6></p>
+          <p><button class=\"btn btn-success\">Editar</button> <button class=\"btn btn-danger\">Excluir</button></p>
+          <hr class=\"mt-2\">
+          </div>
+          </div>
+          </div>
+          </div>";
+        }
+    } 
+
     function listBirthday($sql,$caminho)
     {
         
@@ -115,7 +158,9 @@
 
     function listUsersAdmin($sql)
     {
+        require_once("../util/modal.php");
         require_once("../connection/connection.php");
+        modal_addUser();
         $database = connection_db();
         $query = mysqli_query($database,$sql);
         while($row = mysqli_fetch_assoc($query))

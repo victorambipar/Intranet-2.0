@@ -6,7 +6,6 @@
   require_once("../util/script.php");
   require_once("../util/footer.php");
   require_once("../util/functions.php");
-  require_once("../util/modal.php");
   require_once("../util/functions_js.php");
 
 ?>
@@ -26,7 +25,7 @@
     <button type="button" onClick="document.getElementById('id01').style.display='block'" class="btn btn-success">
     Adicionar</button>
     <br><br>
-    <?php modal_addUser()?>
+    
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">

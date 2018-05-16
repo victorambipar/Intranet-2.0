@@ -25,7 +25,7 @@
           <div class="mb-0 mt-4">
             <i class="fa fa-comments"></i> Mural de recados</div>
           <hr class="mt-2">
-          <?php listUsers2("SELECT users.id_user,messages.title_message,messages.text_message,messages.date_message,messages.time_message,sectors.name_sector,users.name_user,users.second_name_user,users.url_img FROM messages INNER JOIN users ON users.id_user = messages.id_user INNER JOIN sectors ON sectors.id_sector = messages.id_sector;","../")?>
+          <?php listUsers2("SELECT users.id_user,messages.title_message,messages.text_message,messages.date_message,messages.time_message,sectors.name_sector,users.name_user,users.second_name_user,users.url_img FROM messages INNER JOIN users ON users.id_user = messages.id_user INNER JOIN sectors ON sectors.id_sector = messages.id_sector ORDER BY messages.id_message DESC;","../")?>
         
     </div>
     <!-- /.container-fluid-->

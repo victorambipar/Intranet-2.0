@@ -6,7 +6,7 @@
   require_once("../util/footer.php");
   require_once("../util/functions.php");
   require_once("../util/functions_js.php");
-  require_once("../util/modal.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

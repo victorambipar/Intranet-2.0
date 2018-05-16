@@ -146,5 +146,43 @@
     </div>";
            
     }
+    
+    function modal_addMessage()
+    {
+    
+    echo "<div class=\"w3-container\">
+    <div id=\"id05\" class=\"w3-modal w3-animate-opacity\">
+    <div class=\"w3-modal-content w3-card-4\">
+    <header class=\"w3-container w3-teal\"> 
+    <span onclick=\"document.getElementById('id05').style.display='none'\" 
+    class=\"w3-button w3-large w3-display-topright\">&times;</span>
+    <h2>Adicionar - Recado</h2>
+    </header>
+    <div class=\"w3-container\">
+    <form action=\"../php/message/insertMessage.php\" method=\"POST\"><br>
+    Título: <input type=\"text\" name=\"title\" class=\"form-control\" id=\"title\"><br>
+    Recado: <textarea name=\"message\" placeholder=\"Escreva aqui seu recado...\" class=\"form-control\" id=\"message\"></textarea><br>
+    <div class=\"row\">
+    <div class=\"col-md-6\">
+    Setor: <select name=\"sector\">
+    ";
+    listSector("SELECT * FROM sectors ORDER BY name_sector ASC;");
+    echo "</select>
+    </div>
+    <br><br>
+    </div>
+    <br>
+    <button type=\"submit\" class=\"btn btn-success\">ENVIAR</button>
+    <br><br>
+    </form>
+    </div>
+    <footer class=\"w3-container w3-teal\">
+    <br><br>
+    </footer>  
+    </div>
+    </div>
+    </div>";
+           
+    }
 
 ?>
