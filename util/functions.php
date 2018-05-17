@@ -249,6 +249,58 @@
         }
     }
 
+    function listMenuAdmin($sql)
+    {
+        require_once("../util/modal.php");
+        require_once("../connection/connection.php");
+        modal_addMenu();
+        $database = connection_db();
+        $query = mysqli_query($database,$sql);
+        while($row = mysqli_fetch_assoc($query))
+        {
+            $data = array('Select'=>$row);
+        
+        $json = json_encode($data);
+        $obj = json_decode($json,true);
+        foreach($obj as $id)
+        {
+          $id_menu = $id['id_menu'];
+          $date = $id['date_menu'];
+          $dish1 = $id['dish1_menu'];
+          $dish2 = $id['dish2_menu'];
+          $dish3 = $id['dish3_menu'];
+          $garrison1 = $id['garrison1_menu'];
+          $garrison2 = $id['garrison2_menu'];
+          $option = $id['option_menu'];
+          $salad = $id['salad_menu'];
+          $dessert = $id['dessert_menu'];
+        }
+        echo "<tr>
+        <td>$date</td>
+        <td>$dish1</td>
+        <td>$dish2</td>
+        <td>$dish3</td>
+        <td>$garrison1</td>
+        <td>$garrison2</td>
+        <td>$option</td>
+        <td>$salad</td>
+        <td>$dessert</td>
+        <td>
+        <a class=\"dropdown-item\" href=\"#\">
+        <i class=\"fa fa-fw fa-pencil\"></i>
+        </a>
+        </td>
+        <td>
+        <a class=\"dropdown-item\" href=\"#\">
+        <i class=\"fa fa-fw fa-remove\"></i>
+        </a>
+        </td>                
+
+        
+        </tr>";
+        }
+    }
+
     function listExtensions($sql)
     {
         require_once("../connection/connection.php");
@@ -272,6 +324,50 @@
         <td>$ramal</td>
         </tr>";
         }
+    }
+
+    function listMenu($sql)
+    {
+        require_once("connection/connection.php");
+        $database = connection_db();
+        $query = mysqli_query($database,$sql);
+        while($row = mysqli_fetch_assoc($query))
+        {
+            $data = array('Select'=>$row);
+        
+        $json = json_encode($data);
+        $obj = json_decode($json,true);
+        foreach($obj as $id)
+        {
+            $dish1 = $id['dish1_menu'];
+            $dish2 = $id['dish2_menu'];
+            $dish3 = $id['dish3_menu'];
+            $garrison1 = $id['garrison1_menu'];
+            $garrison2 = $id['garrison2_menu'];
+            $option = $id['option_menu'];
+            $salad = $id['salad_menu'];
+            $dessert = $id['dessert_menu'];
+        }
+        echo "<p><h6 style=\"overflow-wrap:break-word;\">Prato 1: $dish1</h6></p>
+        <p><h6 style=\"overflow-wrap:break-word;\">Prato 2: $dish2</h6></p>
+        <p><h6 style=\"overflow-wrap:break-word;\">Prato 3: $dish3</h6></p>
+        <p><h6 style=\"overflow-wrap:break-word;\">Guarnição 1: $garrison1</h6></p>
+        <p><h6 style=\"overflow-wrap:break-word;\">Guarnição 2: $garrison2</h6></p>
+        <p><h6 style=\"overflow-wrap:break-word;\">Opção: $option</h6></p>
+        <p><h6 style=\"overflow-wrap:break-word;\">Salada:$salad</h6></p>
+        <p><h6 style=\"overflow-wrap:break-word;\">Sobremesas: $dessert</h6></p>";
+        }
+    }
+
+    function showProfile()
+    {
+        echo "<img class=\"d-flex mr-3 rounded-circle image-responsive\" width=\"200px\" height=\"200px\" src=\"".$_SESSION['img']."\" alt=\"\">
+        </div>
+        <div class=\"col-md-6 text-capitalize\">
+        <h1>".$_SESSION['name']."</h1>
+        <div class=\"text-lowercase\">
+        <h3>".$_SESSION['email']."
+        </div>";
     }
 
     function listProfile($sql)

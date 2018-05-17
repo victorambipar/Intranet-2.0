@@ -1,5 +1,6 @@
 <head>
 <link rel="stylesheet" href="../css/style_modal.css"> 
+
 </head>
 <?php
 
@@ -183,6 +184,62 @@
     </div>
     </div>";
            
+    }
+
+    function modal_addMenu()
+    {
+    
+    echo "<div class=\"w3-container\">
+    <div id=\"id06\" class=\"w3-modal w3-animate-opacity\">
+    <div class=\"w3-modal-content w3-card-4\">
+    <header class=\"w3-container w3-teal\"> 
+    <span onclick=\"document.getElementById('id06').style.display='none'\" 
+    class=\"w3-button w3-large w3-display-topright\">&times;</span>
+    <h2>Adicionar - Cardápio</h2>
+    </header>
+    <div class=\"w3-container\">
+    <form action=\"../php/menu/insertMenu.php\" method=\"POST\"><br>
+                    Data: <input type=\"date\" name=\"date\" class=\"form-control\" id=\"date\">
+                    Prato 1: <input type=\"text\" name=\"dish1\" class=\"form-control\" id=\"dish1\">
+                    Prato 2: <input type=\"text\" name=\"dish2\" class=\"form-control\" id=\"dish2\">
+                    Prato 3: <input type=\"text\" name=\"dish3\" class=\"form-control\" id=\"dish3\">
+                    Guarnição 1: <input type=\"text\" name=\"garrison1\" class=\"form-control\" id=\"garrison1\">
+                    Guarnição 2: <input type=\"text\" name=\"garrison2\" class=\"form-control\" id=\"garrison2\">
+                    Opção: <input type=\"text\" name=\"option\" class=\"form-control\" id=\"option\">
+                    Salada: <input type=\"text\" name=\"salad\" class=\"form-control\" id=\"salad\">
+                    Sobremesas: <input type=\"text\" name=\"dessert\" class=\"form-control\" id=\"dessert\">
+    <br>
+    <button type=\"submit\" class=\"btn btn-success\">SALVAR</button>
+    <br><br>
+    </form>
+    </div>
+    <footer class=\"w3-container w3-teal\">
+    <br><br>
+    </footer>  
+    </div>
+    </div>
+    </div>";
+           
+    }
+
+    function modal_Start()
+    {
+    
+    echo "<div id=\"meumodal\" class=\"w3-modal w3-animate-opacity\">
+    <div class=\"modal fade bs-example-modal-lg\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myLargeModalLabel\">
+      <div class=\"modal-dialog modal-lg\">
+        <div class=\"modal-content\">
+        
+          <div class=\"modal-body\">
+         
+          <H2>Battery Low!</H2>
+          <h4>Your Laptop battery is less then 10%.Recharge the battery.</h4>
+         
+          </div>
+        </div>
+      </div>
+    </div>";
+   
     }
 
 ?>

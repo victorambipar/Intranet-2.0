@@ -1,4 +1,8 @@
+<?php
 
+  require_once("util/functions_js.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +28,7 @@
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <link href="css/slider.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,6 +40,14 @@
 
 <body>
 
+<ul class="cb-slideshow">
+            <li style="color:transparent;"><span></span><div></div></li>
+            <li style="color:transparent;"><span></span><div></div></li>
+            <li style="color:transparent;"><span></span><div></div></li>
+            <li style="color:transparent;"><span></span><div></div></li>
+            <li style="color:transparent;"><span></span><div></div></li>
+            <li style="color:transparent;"><span></span><div></div></li>
+</ul>
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -86,6 +99,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
+
+    <?php carrosel()?>
 
 </body>
 

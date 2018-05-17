@@ -1,7 +1,8 @@
 <?php
 
     function navigation($caminho)
-    {
+    { 
+      
         echo "<body class=\"fixed-nav sticky-footer bg-dark sidenav-toggled\" id=\"page-top\">
         <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark fixed-top\" id=\"mainNav\">
         <a class=\"navbar-brand\" href=\"".$caminho."index.html\">Intranet</a>
@@ -26,7 +27,7 @@
               </a>
             </li>
             <li class=\"nav-item\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Eventos\">
-              <a class=\"nav-link\" href=\"".$caminho."tables.html\">
+              <a class=\"nav-link\" href=\"".$caminho."pages/events.php\">
                 <i class=\"fa fa-fw fa-calendar\"></i>
                 <span class=\"nav-link-text\"></span>
               </a>
@@ -76,7 +77,7 @@
                 <i class=\"fa fa-fw fa-comments\"></i><strong> Recados</strong>
                 </a>
                 <div class=\"dropdown-divider\"></div>
-                <a class=\"dropdown-item\" href=\"".$caminho."#\">
+                <a class=\"dropdown-item\" href=\"".$caminho."pages/menu_admin.php\">
                 <i class=\"fa fa-fw fa-cutlery\"></i><strong> Cardápio</strong>
                 </a>
             </li>";
